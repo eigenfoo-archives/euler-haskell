@@ -1,2 +1,2 @@
-# euler
-Solutions to Project Euler problems, written in Haskell
+# Project Euler Haskell Solutions
+Trying to teach myself Haskell. Solutions to Project Euler problems. 
