@@ -1,6 +1,6 @@
 import Data.List
 
-main = print $ sum [x | x <- takeWhile (< 4000000) fibs, even x]
+main = print . sum $ [x | x <- takeWhile (< 4000000) fibs, even x]
   where fibs = unfoldr (\(a, b) -> Just (a, (b, a+b))) (1, 1)
 
 {-

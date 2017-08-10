@@ -1,4 +1,4 @@
-main = print $ maximum $ prime_factors 600851475143
+main = print . maximum . prime_factors $ 600851475143
 
 prime_factors :: (Integral a) => a -> [a]
 prime_factors 1 = []

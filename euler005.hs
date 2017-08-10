@@ -1,6 +1,6 @@
 import Data.List
 
-main = print $ product $ foldl1 lcm_primes $ map prime_factors [1..20]
+main = print . product $ foldl1 lcm_primes $ map prime_factors [1..20]
 
 lcm_primes :: (Eq a) => [a] -> [a] -> [a]
 lcm_primes a b = a ++ (b \\ a)
