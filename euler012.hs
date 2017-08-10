@@ -6,7 +6,7 @@ main = print . head $ filter ((> 500) . numDivisors) triangulars
 numDivisors :: Int -> Int
 numDivisors n = product . map ((+ 1) . length) . group . primeFactors $ n
 
-primeFactors :: (Int a) => a -> [a]
+primeFactors :: Int -> [Int]
 primeFactors 1 = []
 primeFactors n
   | factor == []        = [n]
