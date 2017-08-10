@@ -14,7 +14,7 @@ prime_factors n
     where factor = take 1 [x | x <- [2..n-1], n `rem` x == 0]
 
 {-
-Naive solution: (takes too long and does not scale)
+Naive solution: (takes much longer, does not scale)
   main = print $ head $ filter evenlyDivisible1_20 [1..]
 
   evenlyDivisible1_20 :: (Integral a) => a -> Bool
