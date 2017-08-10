@@ -1,6 +1,6 @@
 main = print . maximum . primeFactors $ 600851475143
 
-primeFactors :: (Integral a) => a -> [a]
+primeFactors :: Int -> [Int]
 primeFactors 1 = []
 primeFactors n
   | factor == []        = [n]

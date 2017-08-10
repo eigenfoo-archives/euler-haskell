@@ -1,7 +1,12 @@
-main = print $ primes !! 10000 -- zero indexing; 10001st prime
-  where primes = 2 : filter (\n -> (length $ primeFactors n) == 1) [3,5..]
+import Data.List
 
-primeFactors :: Int -> [Int]
+main = print . head $ filter ((> 500) . numDivisors) triangulars
+  where triangulars = scanl1 (+) [1..]
+
+numDivisors :: Int -> Int
+numDivisors n = product . map ((+ 1) . length) . group . primeFactors $ n
+
+primeFactors :: (Int a) => a -> [a]
 primeFactors 1 = []
 primeFactors n
   | factor == []        = [n]

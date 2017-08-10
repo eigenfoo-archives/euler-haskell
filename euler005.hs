@@ -5,7 +5,7 @@ main = print . product $ foldl1 lcmPrimes $ map primeFactors [1..20]
 lcmPrimes :: (Eq a) => [a] -> [a] -> [a]
 lcmPrimes a b = a ++ (b \\ a)
 
-primeFactors :: (Integral a) => a -> [a]
+primeFactors :: Int -> [Int]
 primeFactors 1 = []
 primeFactors n
   | factor == []        = [n]
