@@ -32,4 +32,4 @@ main =
         maxProdIndex = elemIndex maxProd products
         maxProdDigits = map digitToInt <$> (consecDigits !!) <$> maxProdIndex
     in  do print maxProd
-        print maxProdDigits
+           print maxProdDigits
