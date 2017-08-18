@@ -23,11 +23,13 @@ str = "73167176531330624919225119674426574742355349194934\
       \71636269561882670428252483600823257530420752963450"
 
 main =
-  let staggered = zipWith (\x y -> drop x y) [1..13] (replicate 13 str)
-      staggeredTranspose = transpose staggered
-      consecDigits = take (length staggeredTranspose - 12) staggeredTranspose
+  let staggered = transpose $ zipWith (\x y -> drop x y)
+                                      [1..13] 
+                                      (replicate 13 str)
+      consecDigits = reverse $ drop 12 (reverse staggered)
       products = map product (map (map digitToInt) consecDigits)
-      maxProduct = maximum products
-      --maxProductDigits = find ((== maxProduct) . product) consecDigits
-  in  do print maxProduct
-         --print maxProductDigits
+      maxProd = maximum products
+      maxProdIndex = elemIndex maxProd products
+      maxProdDigits = map digitToInt <$> (consecDigits !!) <$> maxProdIndex
+  in  do print maxProd
+         print maxProdDigits
